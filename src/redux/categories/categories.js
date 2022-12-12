@@ -1,4 +1,4 @@
-const CHECK_STATUES = 'CHECK_STATUES';
+const CHECK_STATUES = 'bookstore/categories/CHECK_STATUS';
 const initialState = [];
 
 const categoryReduser = (state = initialState, action) => {
