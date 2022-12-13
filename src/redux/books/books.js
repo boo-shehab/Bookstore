@@ -2,19 +2,19 @@ const ADD_BOOK = 'bookstore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
 const initialBooks = [
   {
-    id: 1,
+    id: '1',
     title: 'first book',
-    auther: 'first auther',
+    author: 'first auther',
   },
   {
-    id: 2,
+    id: '2',
     title: 'first book',
-    auther: 'first auther',
+    author: 'first auther',
   },
   {
-    id: 3,
+    id: '3',
     title: 'first book',
-    auther: 'first auther',
+    author: 'first auther',
   }];
 
 const bookReduser = (state = initialBooks, action) => {
