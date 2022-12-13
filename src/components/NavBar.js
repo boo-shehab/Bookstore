@@ -8,7 +8,7 @@ const NavBar = () => (
         <NavLink to="/">Books</NavLink>
       </li>
       <li>
-        <NavLink to="/Categories">calculator</NavLink>
+        <NavLink to="/Categories">categories</NavLink>
       </li>
     </ul>
   </nav>
