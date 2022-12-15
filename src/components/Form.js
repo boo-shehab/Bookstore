@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addBook, addBookOne } from '../redux/books/books';
+import './form.css';
 
 const Form = () => {
   const dispatch = useDispatch();
@@ -31,12 +32,17 @@ const Form = () => {
       });
     }
   };
+
   return (
-    <form>
-      <input type="text" name="title" value={book.title} placeholder="title" onChange={handleChange} />
-      <input type="text" name="author" value={book.author} placeholder="author" onChange={handleChange} />
-      <button type="submit" onClick={newBook}>submit</button>
-    </form>
+
+    <section>
+      <h2 className="form-title">ADD NEW BOOK</h2>
+      <form className="add-form" onSubmit={newBook}>
+        <input type="text" name="title" className="input title-input" value={book.title} placeholder="Book title" required onChange={handleChange} />
+        <input type="text" name="title" className="input author-input" value={book.author} placeholder="Book author" required onChange={handleChange} />
+        <button className="primary-button-big" type="submit">ADD BOOK</button>
+      </form>
+    </section>
   );
 };
 export default Form;
