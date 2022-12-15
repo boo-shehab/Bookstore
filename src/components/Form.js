@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addBook } from '../redux/books/books';
+import { addBook, addBookOne } from '../redux/books/books';
 
 const Form = () => {
   const dispatch = useDispatch();
   const [book, setBook] = useState({
     title: '',
-    auther: '',
+    author: '',
   });
 
   const handleChange = (ele) => {
@@ -18,22 +18,23 @@ const Form = () => {
 
   const newBook = (e) => {
     e.preventDefault();
-    if (book.title.trim() !== '' && book.auther.trim() !== '') {
-      const newBook = {
+    if (book.title.trim() !== '' && book.author.trim() !== '') {
+      const Book = {
         ...book,
-        id: Date.now().toString(),
+        item_id: Date.now().toString(),
+        category: 'Fiction',
       };
-      dispatch(addBook(newBook));
+      dispatch(addBook(Book)).then(() => dispatch(addBookOne(Book)));
       setBook({
         title: '',
-        auther: '',
+        author: '',
       });
     }
   };
   return (
     <form>
-      <input type="text" name="title" value={book.title} onChange={handleChange} />
-      <input type="text" name="auther" value={book.auther} onChange={handleChange} />
+      <input type="text" name="title" value={book.title} placeholder="title" onChange={handleChange} />
+      <input type="text" name="author" value={book.author} placeholder="author" onChange={handleChange} />
       <button type="submit" onClick={newBook}>submit</button>
     </form>
   );

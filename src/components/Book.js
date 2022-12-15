@@ -1,15 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { removeBook } from '../redux/books/books';
+import { removeBook, removeBookOne } from '../redux/books/books';
 
 const Book = (props) => {
+  // eslint-disable-next-line camelcase
   const { title, author, id } = props;
   const dispatch = useDispatch();
 
   const remove = (e) => {
     e.preventDefault();
-    dispatch(removeBook(id));
+    const obj = {
+      item_id: id,
+    };
+    dispatch(removeBook(obj)).then(() => {
+      dispatch(removeBookOne(obj));
+    });
   };
   return (
     <>
