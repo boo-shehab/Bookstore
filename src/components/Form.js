@@ -33,8 +33,8 @@ const Form = () => {
   };
   return (
     <form>
-      <input type="text" name="title" value={book.title} onChange={handleChange} />
-      <input type="text" name="author" value={book.author} onChange={handleChange} />
+      <input type="text" name="title" value={book.title} placeholder="title" onChange={handleChange} />
+      <input type="text" name="author" value={book.author} placeholder="author" onChange={handleChange} />
       <button type="submit" onClick={newBook}>submit</button>
     </form>
   );
