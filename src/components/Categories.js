@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Creators } from '../redux/categories/categories';
+import './Categories.css';
 
 const Cateories = () => {
   const dispatch = useDispatch();
@@ -13,7 +14,7 @@ const Cateories = () => {
   return (
     <div>
       <h2>{categories}</h2>
-      <button type="button" onClick={check}>Check status</button>
+      <button className="primary-button-big" type="button" onClick={check}>Check status</button>
     </div>
   );
 };

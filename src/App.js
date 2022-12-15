@@ -10,10 +10,12 @@ function App() {
   return (
     <Provider store={Store}>
       <NavBar />
-      <Routes>
-        <Route path="/" element={<Books />} />
-        <Route path="/Categories" element={<Cateories />} />
-      </Routes>
+      <div className="container">
+        <Routes>
+          <Route path="/" element={<Books />} />
+          <Route path="/Categories" element={<Cateories />} />
+        </Routes>
+      </div>
     </Provider>
   );
 }
