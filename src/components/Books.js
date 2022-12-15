@@ -1,19 +1,29 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getBooks } from '../redux/books/books';
 import Book from './Book';
 import Form from './Form';
 
 const Books = () => {
-  const book = useSelector((state) => state.book);
+  const { books, status } = useSelector((state) => state.book);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getBooks());
+  }, []);
+
+  if (!status) {
+    return <h1>Loading...</h1>;
+  }
   return (
     <div>
       <div>
-        {book.map((ele) => (
+        {books.map((ele) => (
           <Book
             title={ele.title}
-            id={ele.id}
+            id={ele.item_id}
             author={ele.author}
-            key={ele.id}
+            key={ele.item_id}
           />
         ))}
       </div>
