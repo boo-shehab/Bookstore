@@ -79,6 +79,7 @@
   width: 100%;
   margin: 2.5rem 0 1.813rem 0;
 }
+
 .percent-complete {
   font-family: "Montserrat", sans-serif;
   font-size: 2rem;
@@ -112,6 +113,7 @@
   border-width: 5px;
   transform: rotate(45deg);
 }
+
 .progress-container {
   display: flex;
   align-items: center;
@@ -159,4 +161,3 @@
   letter-spacing: 0.5px;
   color: white;
 }
-
