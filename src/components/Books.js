@@ -10,7 +10,7 @@ const Books = () => {
 
   useEffect(() => {
     dispatch(getBooks());
-  }, []);
+  }, [dispatch]);
 
   if (!status) {
     return <h1>Loading...</h1>;
