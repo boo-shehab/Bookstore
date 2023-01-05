@@ -52,7 +52,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-coming soon...
+[Live Demo](https://boo-shehab.github.io/Bookstore/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
